@@ -9,6 +9,14 @@ mudanças está em [`ps5upload-gdrive-v11.0.1.patch`](ps5upload-gdrive-v11.0.1.p
 
 > Não é uma versão oficial. Se der problema, abra uma issue **aqui**, não no repositório original.
 
+**Por que não está no PS5Upload oficial?** O recurso foi oferecido ao autor
+([issue #674](https://github.com/phantomptr/ps5upload/issues/674)). Ele preferiu não incluir
+porque o PS5Upload não guarda credenciais de ninguém, e aqui o acesso ao Google Drive (um token)
+fica salvo no PS5. Ele incentivou manter esta versão em paralelo. Se você prefere não deixar
+nenhum login no console, use a alternativa que ele sugeriu: no app do PC, **Save Data ›
+Automatic backups** numa pasta que o Google Drive sincroniza. Essa opção precisa do PC ligado com
+o app aberto.
+
 ## O que ela faz
 
 - **Backup automático** a cada 15 min, 30 min, 1 h, 2 h ou 6 h, mesmo com o jogo aberto. O save
@@ -101,5 +109,10 @@ What it adds:
 Sign-in is Google's OAuth device flow with a QR code, using the user's own "TVs and Limited Input"
 client and the `drive.file` scope. TLS is mbed TLS 3.6.2, pinned to Google's root CAs.
 
-Not an official release: please report problems here, not upstream. The full change is
+Not an official release: please report problems here, not upstream. The feature was offered
+upstream ([#674](https://github.com/phantomptr/ps5upload/issues/674)) and declined, because
+PS5Upload doesn't store anyone's credentials and this build keeps a Google token on the console.
+The author encouraged keeping it going as a separate build. If you'd rather keep no sign-in on
+the console, use the alternative the author suggested: in the PC app, point Save Data › Automatic
+backups at a folder that Google Drive syncs (this needs the PC app running). The full change is
 [`ps5upload-gdrive-v11.0.1.patch`](ps5upload-gdrive-v11.0.1.patch) against the v11.0.1 tag.
